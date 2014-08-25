@@ -37,7 +37,7 @@ module.exports = function (fileName) {
 
     var contents = '\'use strict\';\nmodule.exports = {\n' +
         files.map(function (f) {
-          f = [''].concat(f.split('\\')).join('/');
+          f = f.split('\\').join('/');
           return '  \'' + f + '\': require(\'.' + f + '\')';
         }).join(',\n') +
         '\n};',
